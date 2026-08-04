@@ -141,32 +141,47 @@ export default function Services() {
           className="border-t border-gray-100 pt-24"
         >
           <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold font-heading">Our OTHER Services</h3>
+            <h3 className="text-3xl md:text-4xl font-bold font-heading text-foreground">
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#175F30] to-[#22c55e]">Other Services</span>
+            </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {otherServices.map((service, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-              >
-                <h4 className="text-xl font-bold font-heading mb-4 uppercase tracking-tight">{service.title}</h4>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                <ul className="space-y-3 mt-auto">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm font-medium text-gray-800">
-                      <CheckCircle2 className="text-[#22c55e] shrink-0" size={16} />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+            {otherServices.map((service, index) => {
+              // Map icons based on service title
+              let Icon = ArrowRight;
+              if (index === 0) Icon = require("lucide-react").Monitor;
+              if (index === 1) Icon = require("lucide-react").Video;
+              if (index === 2) Icon = require("lucide-react").Headset;
+
+              return (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group relative bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-[0_30px_60px_-15px_rgba(34,197,94,0.3)] hover:border-[#22c55e]/30 hover:-translate-y-2 transition-all duration-500 flex flex-col"
+                >
+                  <div className="w-14 h-14 bg-[#eef7f1] group-hover:bg-[#22c55e] group-hover:text-white text-[#175F30] rounded-2xl flex items-center justify-center mb-8 transition-colors duration-500">
+                    <Icon size={28} />
+                  </div>
+                  
+                  <h4 className="text-xl font-bold font-heading mb-4 text-gray-900 group-hover:text-[#175F30] transition-colors duration-300">{service.title}</h4>
+                  <p className="text-gray-500 text-[15px] leading-relaxed mb-8 flex-grow">
+                    {service.description}
+                  </p>
+                  
+                  <ul className="space-y-4 mt-auto">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-3 text-sm font-semibold text-gray-700">
+                        <CheckCircle2 className="text-[#22c55e] shrink-0" size={18} />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
 
