@@ -95,8 +95,8 @@ export default function Footer() {
             Ready to scale? Contact us for a free strategy session and discover how we can grow your business.
           </p>
           <div className="mt-4 flex flex-col gap-3 text-sm text-gray-300">
-            <p><strong className="text-white">Email:</strong> connect@foremostleads.in</p>
-            <p><strong className="text-white">Phone:</strong> +91 - 6350291420</p>
+            <p><strong className="text-white">Email:</strong> <a href="mailto:connect@foremostleads.in" className="hover:text-brand transition-colors">connect@foremostleads.in</a></p>
+            <p><strong className="text-white">Phone:</strong> <a href="tel:+916350291420" className="hover:text-brand transition-colors">+91 - 6350291420</a></p>
             <p><strong className="text-white">Address:</strong> IT Park, Sitapura, Jaipur</p>
           </div>
         </div>

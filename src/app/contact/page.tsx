@@ -51,26 +51,42 @@ export default function ContactPage() {
 
           <div className="flex flex-col gap-8 mb-16">
             {[
-              { icon: Phone, title: "Call Us Directly", desc: "+91 - 6350291420" },
-              { icon: Mail, title: "Email Address", desc: "connect@foremostleads.in" },
-              { icon: MapPin, title: "Headquarters", desc: "IT Park, Sitapura, Jaipur" }
-            ].map((item, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 + (idx * 0.1) }}
-                className="flex items-start gap-5 group"
-              >
-                <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-[#175F30] group-hover:bg-[#22c55e] group-hover:text-white transition-colors duration-300 shrink-0">
-                  <item.icon size={22} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-base font-heading text-gray-900 mb-1">{item.title}</h4>
+              { icon: Phone, title: "Call Us Directly", desc: "+91 - 6350291420", href: "tel:+916350291420" },
+              { icon: Mail, title: "Email Address", desc: "connect@foremostleads.in", href: "mailto:connect@foremostleads.in" },
+              { icon: MapPin, title: "Headquarters", desc: "IT Park, Sitapura, Jaipur", href: null }
+            ].map((item, idx) => {
+              const content = (
+                <>
+                  <h4 className="font-bold text-base font-heading text-gray-900 mb-1 group-hover:text-[#175F30] transition-colors">{item.title}</h4>
                   <p className="text-sm font-medium text-gray-500">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+                </>
+              );
+
+              return (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 + (idx * 0.1) }}
+                  className="flex items-start gap-5 group"
+                >
+                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-[#175F30] group-hover:bg-[#22c55e] group-hover:text-white transition-colors duration-300 shrink-0">
+                    <item.icon size={22} />
+                  </div>
+                  <div>
+                    {item.href ? (
+                      <a href={item.href} className="block w-full h-full">
+                        {content}
+                      </a>
+                    ) : (
+                      <div>
+                        {content}
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
 
           <motion.div
