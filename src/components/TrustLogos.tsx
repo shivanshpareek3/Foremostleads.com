@@ -38,7 +38,7 @@ export default function TrustLogos() {
             {duplicatedLogos.map((logo, index) => (
               <div 
                 key={index} 
-                className="flex items-center justify-center cursor-default h-12 transition-all duration-500 hover:scale-105"
+                className="flex items-center justify-center cursor-default h-12 transition-all duration-500 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 hover:scale-105"
               >
                 <img 
                   src={logo.src} 
