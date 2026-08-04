@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
+import HeroSlider from "./HeroSlider";
 
 // Typewriter effect component for text
 const TypewriterText = ({ text, delay = 0, className = "" }: { text: string; delay?: number; className?: string }) => {
@@ -35,29 +36,41 @@ const TypewriterText = ({ text, delay = 0, className = "" }: { text: string; del
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen pt-32 pb-20 flex items-center overflow-hidden bg-white">
-      {/* Immersive Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[70%] rounded-full bg-[#175F30]/5 blur-[120px]" />
-        <div className="absolute top-[20%] -right-[10%] w-[40%] h-[60%] rounded-full bg-[#22c55e]/5 blur-[120px]" />
-        <div className="absolute -bottom-[20%] left-[20%] w-[60%] h-[50%] rounded-full bg-[#175F30]/5 blur-[150px]" />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.02]" />
-      </div>
+    <section className="relative w-full min-h-screen pt-32 pb-20 flex items-center overflow-hidden bg-black">
+      
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-60"
+      >
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-hacker-working-on-a-code-with-a-dark-background-41221-large.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Dark gradient overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 z-0 pointer-events-none" />
+
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.05] z-0 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+        
         {/* Left Content */}
         <div className="flex flex-col items-start text-left pt-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex items-center gap-2 px-4 py-2 mb-8 text-xs font-bold tracking-widest text-[#175F30] bg-white border border-[#22c55e]/20 rounded-full shadow-[0_0_20px_rgba(34,197,94,0.1)] uppercase backdrop-blur-md"
+            className="flex items-center gap-2 px-4 py-2 mb-8 text-xs font-bold tracking-widest text-[#22c55e] bg-white/5 border border-[#22c55e]/30 rounded-full shadow-[0_0_20px_rgba(34,197,94,0.1)] uppercase backdrop-blur-md"
           >
             <Sparkles size={14} className="text-[#22c55e]" />
             Performance Marketing That Delivers
           </motion.div>
           
-          <h1 className="max-w-xl mb-6 text-5xl md:text-6xl lg:text-[64px] font-bold leading-[1.1] tracking-tight text-foreground font-heading flex flex-col">
+          <h1 className="max-w-xl mb-6 text-5xl md:text-6xl lg:text-[64px] font-bold leading-[1.1] tracking-tight text-white font-heading flex flex-col">
             <TypewriterText text="Predictable Growth." delay={0.2} />
             <div className="flex items-center gap-3">
               <TypewriterText text="Powered by" delay={1.0} />
@@ -65,14 +78,14 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.5, type: "spring", bounce: 0.5 }}
-                className="text-transparent bg-clip-text bg-gradient-to-r from-[#175F30] to-[#22c55e] inline-block pb-2"
+                className="text-transparent bg-clip-text bg-gradient-to-r from-[#22c55e] to-[#86efac] inline-block pb-2"
               >
                 Performance.
               </motion.span>
             </div>
           </h1>
           
-          <p className="max-w-lg mb-10 text-[17px] leading-relaxed text-gray-500 font-sans">
+          <p className="max-w-lg mb-10 text-[17px] leading-relaxed text-gray-300 font-sans">
             <TypewriterText text="We help businesses generate high-quality leads, increase sales and scale profitably with data-driven marketing, funnels and automation." delay={1.8} />
           </p>
 
@@ -84,67 +97,34 @@ export default function Hero() {
           >
             <Link 
               href="/contact"
-              className="group relative flex items-center gap-2 px-8 py-4 text-[15px] font-bold text-white rounded-xl bg-gradient-to-r from-[#175F30] to-[#22c55e] shadow-[0_0_30px_rgba(34,197,94,0.3)] hover:shadow-[0_0_40px_rgba(34,197,94,0.5)] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              className="group relative flex items-center gap-2 px-8 py-4 text-[15px] font-bold text-black rounded-xl bg-gradient-to-r from-[#22c55e] to-[#86efac] shadow-[0_0_30px_rgba(34,197,94,0.4)] hover:shadow-[0_0_40px_rgba(34,197,94,0.6)] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+              <div className="absolute inset-0 bg-white/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               <span className="relative z-10">Book Free Strategy Call</span>
               <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
             </Link>
             
             <Link 
               href="/case-studies"
-              className="group flex items-center gap-2 px-8 py-4 text-[15px] font-bold transition-all bg-white/50 backdrop-blur-md border border-gray-200/60 rounded-xl text-foreground hover:bg-white hover:shadow-lg hover:border-gray-300"
+              className="group flex items-center gap-2 px-8 py-4 text-[15px] font-bold transition-all bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-white hover:bg-white/20 hover:shadow-lg hover:border-white/40"
             >
               View Case Studies
             </Link>
           </motion.div>
         </div>
 
-        {/* Right Content - Original Dashboard Mockup */}
+        {/* Right Content - Slider */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95, x: 20 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="relative w-full max-w-lg mx-auto lg:ml-auto"
+          className="relative w-full h-full min-h-[500px] flex items-center justify-center lg:justify-end"
         >
-          <div className="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-gray-100 p-8">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">Total Revenue Generated</h3>
-            <div className="text-3xl font-bold font-heading text-foreground mb-1">₹3,87,45,231</div>
-            <div className="flex items-center gap-1 text-sm font-semibold text-[#175F30] mb-8">
-              <TrendingUp size={14} />
-              <span>+32.5% vs last 30 days</span>
-            </div>
-
-            {/* Faux Graph Line */}
-            <div className="w-full h-32 mb-8 relative">
-              <svg viewBox="0 0 400 100" className="w-full h-full preserve-3d" preserveAspectRatio="none">
-                <path d="M0,80 L40,70 L80,75 L120,50 L160,55 L200,30 L240,45 L280,20 L320,35 L360,10 L400,15" fill="none" stroke="#22c55e" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M0,80 L40,70 L80,75 L120,50 L160,55 L200,30 L240,45 L280,20 L320,35 L360,10 L400,15 L400,100 L0,100 Z" fill="url(#gradient)" opacity="0.1"/>
-                <defs>
-                  <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#22c55e" />
-                    <stop offset="100%" stopColor="transparent" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 pt-6 border-t border-gray-100">
-              <div>
-                <div className="text-xs font-medium text-gray-500 mb-1">Leads Generated</div>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-xl font-bold text-foreground">12,543</span>
-                  <span className="text-xs font-semibold text-[#175F30]">+20.8%</span>
-                </div>
-              </div>
-              <div>
-                <div className="text-xs font-medium text-gray-500 mb-1">ROAS</div>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-xl font-bold text-foreground">4.8x</span>
-                  <span className="text-xs font-semibold text-[#175F30]">+18.7%</span>
-                </div>
-              </div>
-            </div>
+          {/* Subtle glow behind the slider */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#22c55e]/20 blur-[100px] rounded-full z-0" />
+          
+          <div className="relative z-10 w-full">
+            <HeroSlider />
           </div>
         </motion.div>
       </div>

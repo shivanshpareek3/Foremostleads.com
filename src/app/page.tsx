@@ -1,10 +1,12 @@
 import Hero from "@/components/Hero";
 import TrustLogos from "@/components/TrustLogos";
+import StickySidebar from "@/components/StickySidebar";
 import { CheckCircle, MousePointerClick, Target, TrendingUp, MonitorPlay, BarChart, Funnel } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center w-full bg-white font-sans">
+    <div className="flex flex-col items-center justify-center w-full bg-white font-sans relative">
+      <StickySidebar />
       <Hero />
       <TrustLogos />
 
