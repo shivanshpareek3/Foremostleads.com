@@ -77,9 +77,9 @@ export default function Navbar() {
           <Image 
             src="/foremost logo.webp" 
             alt="Foremost Leads Logo" 
-            width={240} 
-            height={60} 
-            className="h-10 md:h-12 w-auto object-contain"
+            width={280} 
+            height={80} 
+            className="h-16 md:h-20 w-auto object-contain transition-all duration-300"
           />
         </Link>
 
@@ -90,10 +90,10 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               ref={(el) => { linksRef.current[i] = el; }}
-              className="relative text-[14px] font-medium text-foreground transition-colors tracking-wide py-2"
+              className={`relative text-[14px] font-bold transition-colors tracking-wide py-2 ${scrolled ? 'text-foreground' : 'text-white/90 hover:text-white'}`}
             >
               {link.name}
-              <span className="nav-underline absolute bottom-0 left-0 w-full h-[2px] bg-[#175F30] scale-x-0" />
+              <span className="nav-underline absolute bottom-0 left-0 w-full h-[2px] bg-[#22c55e] scale-x-0" />
             </Link>
           ))}
         </nav>
@@ -108,11 +108,11 @@ export default function Navbar() {
             <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#175F30] to-[#22c55e] blur opacity-0 group-hover:opacity-40 transition-opacity duration-300" />
           </Link>
           <button
-            className="md:hidden p-2 text-foreground"
+            className={`md:hidden p-2 transition-colors ${scrolled ? 'text-foreground' : 'text-white'}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
