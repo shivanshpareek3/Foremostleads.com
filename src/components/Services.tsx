@@ -50,6 +50,16 @@ export default function Services() {
       title: "Sales Closing Training",
       description: "We create conversion-focused content and provide comprehensive pitch flow training aligned with your sales goals.",
       features: ["Webinar pitch flow"]
+    },
+    {
+      title: "Digital PR & Brand Reputation",
+      description: "Build and protect your online image with strategic PR campaigns and proactive reputation management.",
+      features: ["Media placements", "Authority building"]
+    },
+    {
+      title: "Personal Branding",
+      description: "Establish yourself as an industry leader with targeted personal branding and social presence strategies.",
+      features: ["Profile optimization", "Thought leadership"]
     }
   ];
 
@@ -152,6 +162,8 @@ export default function Services() {
               if (index === 0) Icon = require("lucide-react").Monitor;
               if (index === 1) Icon = require("lucide-react").Video;
               if (index === 2) Icon = require("lucide-react").Headset;
+              if (index === 3) Icon = require("lucide-react").Megaphone;
+              if (index === 4) Icon = require("lucide-react").UserCircle;
 
               return (
                 <motion.div 
