@@ -71,19 +71,19 @@ export default function Footer() {
         {/* Services */}
         <div className="flex flex-col gap-4">
           <h4 className="text-lg font-bold font-heading mb-2">Services</h4>
-          <Link href="/services/lead-generation" className="text-gray-400 hover:text-brand transition-colors text-sm flex items-center gap-2">
+          <Link href="/services" className="text-gray-400 hover:text-brand transition-colors text-sm flex items-center gap-2">
             <ArrowRight size={14} /> Lead Generation
           </Link>
-          <Link href="/services/meta-ads" className="text-gray-400 hover:text-brand transition-colors text-sm flex items-center gap-2">
+          <Link href="/services" className="text-gray-400 hover:text-brand transition-colors text-sm flex items-center gap-2">
             <ArrowRight size={14} /> Meta Ads
           </Link>
-          <Link href="/services/google-ads" className="text-gray-400 hover:text-brand transition-colors text-sm flex items-center gap-2">
+          <Link href="/services" className="text-gray-400 hover:text-brand transition-colors text-sm flex items-center gap-2">
             <ArrowRight size={14} /> Google Ads
           </Link>
-          <Link href="/services/crm-automation" className="text-gray-400 hover:text-brand transition-colors text-sm flex items-center gap-2">
+          <Link href="/services" className="text-gray-400 hover:text-brand transition-colors text-sm flex items-center gap-2">
             <ArrowRight size={14} /> CRM Automation
           </Link>
-          <Link href="/services/funnels" className="text-gray-400 hover:text-brand transition-colors text-sm flex items-center gap-2">
+          <Link href="/services" className="text-gray-400 hover:text-brand transition-colors text-sm flex items-center gap-2">
             <ArrowRight size={14} /> Funnels
           </Link>
         </div>
