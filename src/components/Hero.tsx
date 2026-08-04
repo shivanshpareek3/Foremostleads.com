@@ -3,10 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
-import dynamic from "next/dynamic";
-
-// Dynamically import 3D visual to avoid SSR issues
-const Hero3DVisual = dynamic(() => import("./Hero3DVisual"), { ssr: false });
+import HeroDashboard from "./HeroDashboard";
 
 export default function Hero() {
   return (
@@ -110,7 +107,7 @@ export default function Hero() {
           className="relative w-full h-full min-h-[500px] flex items-center justify-center lg:justify-end"
         >
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-to-tr from-[#175F30]/10 to-[#22c55e]/10 blur-[100px] rounded-full" />
-          <Hero3DVisual />
+          <HeroDashboard />
         </motion.div>
       </div>
     </section>
