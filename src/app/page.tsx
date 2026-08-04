@@ -3,6 +3,7 @@ import TrustLogos from "@/components/TrustLogos";
 import StickySidebar from "@/components/StickySidebar";
 import AboutStats from "@/components/AboutStats";
 import Services from "@/components/Services";
+import WhyChooseUs from "@/components/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <TrustLogos />
       <AboutStats />
+      <WhyChooseUs />
       <Services />
     </div>
   );
