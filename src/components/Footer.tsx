@@ -99,22 +99,27 @@ export default function Footer() {
             <p><strong className="text-white">Phone:</strong> +91 - 6350291420</p>
             <p><strong className="text-white">Address:</strong> IT Park, Sitapura, Jaipur</p>
           </div>
-          <div className="mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-700 h-[150px] w-full">
-            <iframe 
-              src="https://maps.google.com/maps?q=Foremost+Leads,+CP-+7,+GIT+Rd,+near+IT+Park+Road,+Sitapura+Industrial+Area,+Sitapura,+Jaipur,+Rajasthan+302022&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen={false} 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Foremost Leads Location"
-            ></iframe>
-          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+      {/* Full Width Map at Bottom Center */}
+      <div className="max-w-7xl mx-auto px-6 mt-16">
+        <div className="w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-800 h-[250px] relative">
+          <iframe 
+            src="https://maps.google.com/maps?q=Foremost+Leads,+CP-+7,+GIT+Rd,+near+IT+Park+Road,+Sitapura+Industrial+Area,+Sitapura,+Jaipur,+Rajasthan+302022&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen={false} 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Foremost Leads Location"
+            className="absolute inset-0 grayscale contrast-125 opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+          ></iframe>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
         <p>&copy; {new Date().getFullYear()} Foremost Leads. All rights reserved.</p>
       </div>
     </footer>
