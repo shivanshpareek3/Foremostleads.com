@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -14,26 +14,20 @@ export default function Footer() {
             <Image 
               src="/foremost logo.webp" 
               alt="Foremost Leads Logo" 
-              width={240} 
-              height={60} 
-              className="h-14 w-auto object-contain"
+              width={300} 
+              height={80} 
+              className="h-24 md:h-28 w-auto object-contain -ml-2"
             />
           </Link>
-          <p className="text-gray-400 text-sm leading-relaxed">
+          <p className="text-gray-400 text-sm leading-relaxed -mt-4">
             Predictable growth engine for businesses, brands, coaches, and digital companies. ROI-focused lead generation and scalable marketing systems.
           </p>
           <div className="flex items-center gap-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand transition-colors text-xs">
-              FB
+            <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-colors text-gray-400">
+              <Instagram size={18} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand transition-colors text-xs">
-              X
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand transition-colors text-xs">
-              IG
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand transition-colors text-xs">
-              IN
+            <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-colors text-gray-400">
+              <Linkedin size={18} />
             </a>
           </div>
         </div>
@@ -84,10 +78,10 @@ export default function Footer() {
           <p className="text-gray-400 text-sm">
             Ready to scale? Contact us for a free strategy session and discover how we can grow your business.
           </p>
-          <div className="mt-4 flex flex-col gap-2 text-sm text-gray-300">
-            <p><strong>Email:</strong> hello@foremostleads.com</p>
-            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-            <p><strong>Address:</strong> 123 Growth Ave, Suite 100<br/>New York, NY 10001</p>
+          <div className="mt-4 flex flex-col gap-3 text-sm text-gray-300">
+            <p><strong className="text-white">Email:</strong> connect@foremostleads.in</p>
+            <p><strong className="text-white">Phone:</strong> +91 - 6350291420</p>
+            <p><strong className="text-white">Address:</strong> IT Park, Sitapura, Jaipur</p>
           </div>
         </div>
       </div>
