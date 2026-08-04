@@ -1,25 +1,12 @@
 import Hero from "@/components/Hero";
+import TrustLogos from "@/components/TrustLogos";
 import { CheckCircle, MousePointerClick, Target, TrendingUp, MonitorPlay, BarChart, Funnel } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center w-full bg-white font-sans">
       <Hero />
-      
-      {/* Logos Section */}
-      <section className="w-full py-16 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-sm text-gray-400 font-medium mb-8">Trusted by 100+ businesses across the globe</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
-            <span className="font-bold text-xl flex items-center gap-1"><span className="text-blue-600">∞</span> Meta</span>
-            <span className="font-bold text-xl">Google</span>
-            <span className="font-bold text-xl flex items-center gap-1"><span className="text-orange-500">❖</span> HubSpot</span>
-            <span className="font-bold text-xl">ClickFunnels</span>
-            <span className="font-bold text-xl flex items-center gap-1"><span className="text-blue-400">W</span> WordPress</span>
-            <span className="font-bold text-xl text-[#96bf48]">shopify</span>
-          </div>
-        </div>
-      </section>
+      <TrustLogos />
 
       {/* Stats Section */}
       <section className="w-full py-16 bg-white border-b border-gray-100">
