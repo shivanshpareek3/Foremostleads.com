@@ -99,6 +99,18 @@ export default function Footer() {
             <p><strong className="text-white">Phone:</strong> +91 - 6350291420</p>
             <p><strong className="text-white">Address:</strong> IT Park, Sitapura, Jaipur</p>
           </div>
+          <div className="mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-700 h-[150px] w-full">
+            <iframe 
+              src="https://maps.google.com/maps?q=Foremost+Leads,+CP-+7,+GIT+Rd,+near+IT+Park+Road,+Sitapura+Industrial+Area,+Sitapura,+Jaipur,+Rajasthan+302022&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={false} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Foremost Leads Location"
+            ></iframe>
+          </div>
         </div>
       </div>
 
