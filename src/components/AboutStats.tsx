@@ -1,12 +1,13 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { motion, useMotionValue, useSpring, useTransform, useInView, animate } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion";
 
-// Number Counter Animation Component
+// Robust Number Counter Animation Component
 const Counter = ({ value }: { value: string }) => {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -50px 0px" });
+  const [count, setCount] = useState(0);
   
   // Extract number and text
   const numericString = value.replace(/[^0-9.]/g, '');
@@ -14,27 +15,34 @@ const Counter = ({ value }: { value: string }) => {
   const suffix = value.replace(numericString, '');
   
   useEffect(() => {
-    if (isInView && ref.current && !isNaN(numericValue)) {
-      const controls = animate(0, numericValue, {
-        duration: 2.5,
-        ease: "easeOut",
-        onUpdate: (val) => {
-          if (ref.current) {
-            if (numericValue % 1 !== 0) {
-              ref.current.textContent = val.toFixed(1) + suffix;
-            } else {
-              ref.current.textContent = Math.round(val) + suffix;
-            }
-          }
-        },
-      });
-      return () => controls.stop();
+    if (isInView && !isNaN(numericValue)) {
+      let startTime: number | null = null;
+      const duration = 2000;
+      
+      const updateCount = (timestamp: number) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        
+        // easeOutQuart
+        const easeOut = 1 - Math.pow(1 - progress, 4);
+        
+        setCount(numericValue * easeOut);
+        
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          setCount(numericValue);
+        }
+      };
+      
+      requestAnimationFrame(updateCount);
     }
-  }, [isInView, numericValue, suffix]);
+  }, [isInView, numericValue]);
 
   if (isNaN(numericValue)) return <span>{value}</span>;
   
-  return <span ref={ref}>0{suffix}</span>;
+  const displayValue = numericValue % 1 !== 0 ? count.toFixed(1) : Math.round(count);
+  return <span ref={ref}>{displayValue}{suffix}</span>;
 };
 
 // Custom 3D Tilt Card Component
@@ -140,7 +148,7 @@ export default function AboutStats() {
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch perspective-[2000px]">
 
-          {/* Left Column: Image with Logo */}
+          {/* Left Column: Image Only */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -154,15 +162,6 @@ export default function AboutStats() {
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-
-            {/* Floating Glassmorphism Logo Badge */}
-            <div className="absolute bottom-8 left-8 right-8 p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl flex items-center justify-center">
-              <img
-                src="/foremost logo.webp"
-                alt="Foremost Leads Logo"
-                className="h-12 sm:h-16 object-contain filter drop-shadow-lg brightness-0 invert"
-              />
-            </div>
           </motion.div>
 
           {/* Right Column: 2x2 Stats Grid */}
