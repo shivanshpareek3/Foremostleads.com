@@ -46,7 +46,7 @@ export default function Hero() {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-60"
       >
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-hacker-working-on-a-code-with-a-dark-background-41221-large.mp4" type="video/mp4" />
+        <source src="https://technoderivation.com/video/vd3.mp4" type="video/mp4" />
       </video>
       
       {/* Dark gradient overlay for text readability */}
