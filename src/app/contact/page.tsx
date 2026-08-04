@@ -25,21 +25,21 @@ export default function ContactPage() {
               <div className="text-[#175F30] mt-1"><Phone size={20} /></div>
               <div>
                 <h4 className="font-bold text-sm font-heading mb-1">Call Us</h4>
-                <p className="text-xs text-gray-500">+91 9460034205</p>
+                <p className="text-xs text-gray-500">+91 - 6350291420</p>
               </div>
             </div>
             <div className="flex gap-4">
               <div className="text-[#175F30] mt-1"><Mail size={20} /></div>
               <div>
                 <h4 className="font-bold text-sm font-heading mb-1">Email Us</h4>
-                <p className="text-xs text-gray-500">hello@foremostleads.com</p>
+                <p className="text-xs text-gray-500">connect@foremostleads.in</p>
               </div>
             </div>
             <div className="flex gap-4">
               <div className="text-[#175F30] mt-1"><MapPin size={20} /></div>
               <div>
                 <h4 className="font-bold text-sm font-heading mb-1">Our Office</h4>
-                <p className="text-xs text-gray-500">Gurugram, Haryana, India</p>
+                <p className="text-xs text-gray-500">IT Park, Sitapura, Jaipur</p>
               </div>
             </div>
           </div>
