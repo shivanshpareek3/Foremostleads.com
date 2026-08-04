@@ -6,7 +6,8 @@ import { motion, useMotionValue, useSpring, useTransform, useInView } from "fram
 // Robust Number Counter Animation Component
 const Counter = ({ value }: { value: string }) => {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "0px 0px -50px 0px" });
+  // once: false allows it to replay. margin: "-100px" ensures it's well within the screen before triggering.
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
   const [count, setCount] = useState(0);
   
   // Extract number and text
@@ -15,6 +16,8 @@ const Counter = ({ value }: { value: string }) => {
   const suffix = value.replace(numericString, '');
   
   useEffect(() => {
+    let animationFrameId: number;
+
     if (isInView && !isNaN(numericValue)) {
       let startTime: number | null = null;
       const duration = 2000;
@@ -29,14 +32,21 @@ const Counter = ({ value }: { value: string }) => {
         setCount(numericValue * easeOut);
         
         if (progress < 1) {
-          requestAnimationFrame(updateCount);
+          animationFrameId = requestAnimationFrame(updateCount);
         } else {
           setCount(numericValue);
         }
       };
       
-      requestAnimationFrame(updateCount);
+      animationFrameId = requestAnimationFrame(updateCount);
+    } else {
+      // Reset when scrolling away so it plays again when coming back
+      setCount(0);
     }
+
+    return () => {
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    };
   }, [isInView, numericValue]);
 
   if (isNaN(numericValue)) return <span>{value}</span>;
