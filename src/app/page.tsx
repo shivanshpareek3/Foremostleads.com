@@ -6,7 +6,7 @@ import { CheckCircle, MousePointerClick, Target, TrendingUp, MonitorPlay, BarCha
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center w-full bg-white font-sans relative">
+    <div className="flex flex-col w-full bg-white font-sans relative">
       <StickySidebar />
       <Hero />
       <TrustLogos />
