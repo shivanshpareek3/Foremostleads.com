@@ -113,7 +113,7 @@ export default function ContactForm() {
                 <input 
                   {...register("email")}
                   type="email" 
-                  placeholder="john@company.com"
+                  placeholder="name@company.com"
                   className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#22c55e]/10 focus:border-[#22c55e] transition-all text-sm placeholder:text-gray-400 bg-gray-50/50"
                 />
                 {errors.email && <p className="text-red-500 text-xs mt-2 font-medium">{errors.email.message}</p>}
@@ -126,7 +126,7 @@ export default function ContactForm() {
                 <input 
                   {...register("phone")}
                   type="tel" 
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="+91 98765 43210"
                   className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#22c55e]/10 focus:border-[#22c55e] transition-all text-sm placeholder:text-gray-400 bg-gray-50/50"
                 />
                 {errors.phone && <p className="text-red-500 text-xs mt-2 font-medium">{errors.phone.message}</p>}
