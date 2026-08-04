@@ -57,7 +57,7 @@ export default function Hero() {
             Performance Marketing That Delivers
           </motion.div>
           
-          <h1 className="max-w-[700px] mb-6 text-[50px] md:text-[60px] lg:text-[72px] font-bold leading-[1.1] tracking-tight text-foreground font-heading flex flex-col">
+          <h1 className="max-w-xl mb-6 text-5xl md:text-6xl lg:text-[64px] font-bold leading-[1.1] tracking-tight text-foreground font-heading flex flex-col">
             <TypewriterText text="Predictable Growth." delay={0.2} />
             <div className="flex items-center gap-3">
               <TypewriterText text="Powered by" delay={1.0} />
@@ -72,7 +72,7 @@ export default function Hero() {
             </div>
           </h1>
           
-          <p className="max-w-[500px] mb-12 text-[18px] md:text-[20px] leading-relaxed text-gray-500 font-sans">
+          <p className="max-w-lg mb-10 text-[17px] leading-relaxed text-gray-500 font-sans">
             <TypewriterText text="We help businesses generate high-quality leads, increase sales and scale profitably with data-driven marketing, funnels and automation." delay={1.8} />
           </p>
 
