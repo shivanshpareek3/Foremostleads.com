@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import TrustLogos from "@/components/TrustLogos";
 import StickySidebar from "@/components/StickySidebar";
+import AboutStats from "@/components/AboutStats";
 import { CheckCircle, MousePointerClick, Target, TrendingUp, MonitorPlay, BarChart, Funnel } from "lucide-react";
 
 export default function Home() {
@@ -10,27 +11,7 @@ export default function Home() {
       <Hero />
       <TrustLogos />
 
-      {/* Stats Section */}
-      <section className="w-full py-16 bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div className="text-3xl font-bold font-heading text-[#175F30] mb-2">₹9Cr+</div>
-            <div className="text-sm text-gray-500">Revenue Generated<br/>For Our Clients</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold font-heading text-[#175F30] mb-2">150+</div>
-            <div className="text-sm text-gray-500">Businesses Scaled<br/>Successfully</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold font-heading text-[#175F30] mb-2">95%</div>
-            <div className="text-sm text-gray-500">Client Retention<br/>Rate</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold font-heading text-[#175F30] mb-2">20+</div>
-            <div className="text-sm text-gray-500">Industries<br/>We Serve</div>
-          </div>
-        </div>
-      </section>
+      <AboutStats />
 
       {/* Services Section */}
       <section className="w-full py-24 bg-white">
