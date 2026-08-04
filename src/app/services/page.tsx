@@ -1,80 +1,114 @@
-import { Target, MonitorPlay, MousePointerClick, BarChart, Settings, LayoutTemplate, Mail, LineChart, ArrowRight } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
+import Services from "@/components/Services";
 
 export default function ServicesPage() {
-  const services = [
-    { icon: <Target size={20} />, title: "Lead Generation", desc: "Targeted strategies that bring qualified leads." },
-    { icon: <MonitorPlay size={20} />, title: "Meta Ads", desc: "ROI-focused Facebook & Instagram campaigns." },
-    { icon: <MousePointerClick size={20} />, title: "Google Ads", desc: "Drive traffic, increase conversions and grow." },
-    { icon: <BarChart size={20} />, title: "Sales Funnels", desc: "High-converting funnels built for your business." },
-    { icon: <Settings size={20} />, title: "CRM & Automation", desc: "Automate follow-ups and nurture leads." },
-    { icon: <LayoutTemplate size={20} />, title: "Landing Pages", desc: "High-converting landing pages that sell." },
-    { icon: <Mail size={20} />, title: "Email Marketing", desc: "Engage, nurture and convert with email." },
-    { icon: <LineChart size={20} />, title: "Analytics & Tracking", desc: "Track performance and scale what works." },
-  ];
-
   return (
-    <div className="flex flex-col items-center justify-center w-full bg-white font-sans pt-32 pb-16">
-      <div className="max-w-7xl mx-auto px-6 w-full">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-4">Our Services</h1>
-          <p className="text-gray-500 max-w-xl mx-auto">
-            Data-driven marketing solutions to grow your business faster and smarter.
-          </p>
-        </div>
+    <div className="flex flex-col w-full bg-white font-sans relative">
+      
+      {/* Dark Premium Hero Section */}
+      <section className="relative w-full min-h-[60vh] pt-32 pb-20 flex items-center justify-center overflow-hidden bg-black">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-[#0a1f11] z-0" />
+        
+        {/* Subtle radial glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.15)_0,transparent_50%)]" />
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
-          {services.map((service, i) => (
-            <div key={i} className="p-8 bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-10px_rgba(0,0,0,0.1)] transition-all flex flex-col">
-              <div className="w-10 h-10 bg-[#eef7f1] text-[#175F30] rounded-lg flex items-center justify-center mb-6">
-                {service.icon}
-              </div>
-              <h3 className="text-lg font-bold font-heading mb-2">{service.title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed mb-6 flex-grow">{service.desc}</p>
-              <Link href="#" className="flex items-center gap-2 text-[#175F30] text-sm font-semibold hover:gap-3 transition-all">
-                Learn More <ArrowRight size={14} />
-              </Link>
-            </div>
-          ))}
+        <div className="max-w-4xl mx-auto px-6 relative z-10 w-full flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "backOut" }}
+            className="flex items-center gap-2 px-4 py-2 mb-8 text-xs font-bold tracking-widest text-[#22c55e] bg-white/5 border border-[#22c55e]/30 rounded-full uppercase backdrop-blur-md"
+          >
+            <Sparkles size={14} className="text-[#22c55e] animate-pulse" />
+            Premium Solutions
+          </motion.div>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-6xl lg:text-[72px] font-bold leading-[1.15] tracking-tight text-white font-heading mb-6"
+          >
+            Data-Driven <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#22c55e] to-[#86efac]">
+              Marketing Services
+            </span>
+          </motion.h1>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg text-gray-400 max-w-2xl"
+          >
+            End-to-end strategies to generate high-intent leads, automate conversions, and scale your revenue predictably.
+          </motion.p>
         </div>
+      </section>
 
-        {/* Banner Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between bg-[#f8fcf9] border border-[#e2f1e7] rounded-3xl p-10 mb-24">
-          <div className="max-w-lg mb-8 md:mb-0">
-            <h3 className="text-2xl font-bold font-heading mb-4">Not sure which service is right for you?</h3>
-            <p className="text-gray-500 mb-8">Get a free strategy call and we'll help you find the perfect solution.</p>
-            <Link href="/contact" className="px-6 py-3 bg-[#175F30] text-white font-semibold rounded-md hover:bg-brand-hover transition-colors inline-block">
-              Book Free Call
-            </Link>
-          </div>
-          <div className="w-full md:w-[400px] h-[250px] bg-gray-200 rounded-2xl overflow-hidden relative">
-             <div className="absolute inset-0 bg-gradient-to-tr from-gray-300 to-gray-100 flex items-center justify-center text-gray-400 font-semibold text-sm">Team Image Placeholder</div>
-          </div>
-        </div>
-
-        {/* Features Bottom */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center pt-10 border-t border-gray-100">
-          <div>
-            <div className="font-bold font-heading mb-2">Data-Driven</div>
-            <div className="text-xs text-gray-500">We rely on data, not guesswork.</div>
-          </div>
-          <div>
-            <div className="font-bold font-heading mb-2">ROI-Focused</div>
-            <div className="text-xs text-gray-500">We care about your results.</div>
-          </div>
-          <div>
-            <div className="font-bold font-heading mb-2">Transparent</div>
-            <div className="text-xs text-gray-500">Clear reporting and communication.</div>
-          </div>
-          <div>
-            <div className="font-bold font-heading mb-2">Dedicated Support</div>
-            <div className="text-xs text-gray-500">We're with you at every step.</div>
-          </div>
-        </div>
+      {/* Main Services Component */}
+      {/* We add a negative margin to pull the white section up over the dark hero, creating a sleek overlap effect */}
+      <div className="-mt-10 relative z-20 bg-white rounded-t-[3rem] shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
+        <Services />
       </div>
+
+      {/* Premium CTA Banner */}
+      <section className="w-full px-6 py-24 bg-white">
+        <div className="max-w-7xl mx-auto relative rounded-3xl overflow-hidden shadow-[0_20px_50px_-15px_rgba(23,95,48,0.3)]">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1f11] via-[#175F30] to-[#22c55e] z-0" />
+          
+          {/* Background image overlay with blend mode */}
+          <div className="absolute inset-0 opacity-20 mix-blend-overlay z-0">
+            <img 
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" 
+              alt="Team working" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div className="relative z-10 p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="max-w-xl text-left">
+              <h3 className="text-3xl md:text-5xl font-bold font-heading text-white mb-6 leading-tight">
+                Not sure which service is right for you?
+              </h3>
+              <p className="text-white/80 text-lg mb-8">
+                Let's sit down for a free strategy call. We'll analyze your current setup and map out the perfect solution to hit your goals.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link 
+                  href="/contact" 
+                  className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#175F30] font-bold rounded-xl hover:scale-105 transition-transform shadow-xl group"
+                >
+                  Book Free Call <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Floating Features List */}
+            <div className="w-full md:w-auto bg-black/20 backdrop-blur-md rounded-2xl p-8 border border-white/10">
+              <ul className="space-y-6">
+                {[
+                  "Data-Driven Strategies", 
+                  "ROI-Focused Campaigns", 
+                  "Transparent Reporting", 
+                  "Dedicated Support"
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-center gap-4 text-white font-medium text-lg">
+                    <CheckCircle2 className="text-[#22c55e] shrink-0" size={24} />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
