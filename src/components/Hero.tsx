@@ -28,14 +28,15 @@ export default function Hero() {
         muted
         loop
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-40"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-80"
         style={{ willChange: "transform" }}
       >
         <source src="https://technoderivation.com/video/vd3.mp4" type="video/mp4" />
       </video>
       
-      {/* Simple gradients for contrast - reduced overlapping to prevent lag */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/20 z-0 pointer-events-none" />
+      {/* Simple gradients for text readability - reduced opacity so video shines through */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/20 z-0 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10 w-full">
         
