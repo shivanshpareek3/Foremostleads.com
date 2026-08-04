@@ -54,7 +54,7 @@ export default function ContactForm() {
     <div className="w-full relative">
       <AnimatePresence mode="wait">
         {success ? (
-          <motion.div 
+          <motion.div
             key="success"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -68,7 +68,7 @@ export default function ContactForm() {
             <p className="text-gray-500 mb-8 max-w-sm mx-auto">
               We've received your strategy call request. One of our growth experts will be in touch with you shortly.
             </p>
-            <button 
+            <button
               onClick={() => setSuccess(false)}
               className="flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-xl font-bold hover:bg-gray-800 transition-all hover:-translate-y-1 shadow-lg"
             >
@@ -76,12 +76,12 @@ export default function ContactForm() {
             </button>
           </motion.div>
         ) : (
-          <motion.form 
+          <motion.form
             key="form"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onSubmit={handleSubmit(onSubmit)} 
+            onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-6 w-full"
           >
             <div>
@@ -95,13 +95,13 @@ export default function ContactForm() {
                 {error}
               </div>
             )}
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="group">
                 <label className="block text-xs font-bold text-gray-900 uppercase tracking-wider mb-2 group-focus-within:text-[#175F30] transition-colors">Your Name</label>
-                <input 
+                <input
                   {...register("name")}
-                  type="text" 
+                  type="text"
                   placeholder="John Doe"
                   className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#22c55e]/10 focus:border-[#22c55e] transition-all text-sm placeholder:text-gray-400 bg-gray-50/50"
                 />
@@ -110,9 +110,9 @@ export default function ContactForm() {
 
               <div className="group">
                 <label className="block text-xs font-bold text-gray-900 uppercase tracking-wider mb-2 group-focus-within:text-[#175F30] transition-colors">Email Address</label>
-                <input 
+                <input
                   {...register("email")}
-                  type="email" 
+                  type="email"
                   placeholder="connect@foremostleads.in"
                   className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#22c55e]/10 focus:border-[#22c55e] transition-all text-sm placeholder:text-gray-400 bg-gray-50/50"
                 />
@@ -123,10 +123,10 @@ export default function ContactForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="group">
                 <label className="block text-xs font-bold text-gray-900 uppercase tracking-wider mb-2 group-focus-within:text-[#175F30] transition-colors">Phone Number</label>
-                <input 
+                <input
                   {...register("phone")}
-                  type="tel" 
-                  placeholder="+91 - 6350291420"
+                  type="tel"
+                  placeholder="+91 6350291420"
                   className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#22c55e]/10 focus:border-[#22c55e] transition-all text-sm placeholder:text-gray-400 bg-gray-50/50"
                 />
                 {errors.phone && <p className="text-red-500 text-xs mt-2 font-medium">{errors.phone.message}</p>}
@@ -134,7 +134,7 @@ export default function ContactForm() {
 
               <div className="group">
                 <label className="block text-xs font-bold text-gray-900 uppercase tracking-wider mb-2 group-focus-within:text-[#175F30] transition-colors">Business Type</label>
-                <select 
+                <select
                   {...register("businessType")}
                   className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#22c55e]/10 focus:border-[#22c55e] transition-all text-sm text-gray-700 bg-gray-50/50 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23175F30%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px_12px] bg-no-repeat bg-[position:right_1.25rem_center]"
                 >
@@ -153,7 +153,7 @@ export default function ContactForm() {
 
             <div className="group">
               <label className="block text-xs font-bold text-gray-900 uppercase tracking-wider mb-2 group-focus-within:text-[#175F30] transition-colors">Your Message</label>
-              <textarea 
+              <textarea
                 {...register("message")}
                 rows={4}
                 placeholder="Tell us about your business goals and what you're looking to achieve..."
@@ -162,7 +162,7 @@ export default function ContactForm() {
               {errors.message && <p className="text-red-500 text-xs mt-2 font-medium">{errors.message.message}</p>}
             </div>
 
-            <button 
+            <button
               type="submit"
               disabled={isSubmitting}
               className="relative w-full py-5 mt-4 bg-gradient-to-r from-[#175F30] to-[#22c55e] text-white font-bold rounded-xl overflow-hidden group shadow-[0_15px_30px_-10px_rgba(34,197,94,0.4)] disabled:opacity-70 disabled:cursor-not-allowed transition-all hover:scale-[1.02] active:scale-[0.98]"

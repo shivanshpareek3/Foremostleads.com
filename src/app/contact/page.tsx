@@ -98,7 +98,7 @@ export default function ContactPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,197,94,0.15),transparent_70%)]" />
             <h4 className="font-bold text-lg font-heading text-white mb-6 relative z-10">Connect With Us</h4>
             <div className="flex items-center gap-4 relative z-10">
-              <a href="#" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E1306C] text-white transition-all duration-300 hover:scale-110 shadow-lg backdrop-blur-md">
+              <a href="https://www.instagram.com/foremostleads?igsh=MjY5NWp1ZXN3eWNv" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E1306C] text-white transition-all duration-300 hover:scale-110 shadow-lg backdrop-blur-md">
                 <InstagramIcon size={20} />
               </a>
               <a href="https://www.linkedin.com/company/foremost-leads/posts/?feedView=all" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0077b5] text-white transition-all duration-300 hover:scale-110 shadow-lg backdrop-blur-md">

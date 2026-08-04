@@ -39,7 +39,7 @@ export default function Footer() {
             Predictable growth engine for businesses, brands, coaches, and digital companies. ROI-focused lead generation and scalable marketing systems.
           </p>
           <div className="flex items-center gap-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-colors text-gray-400">
+            <a href="https://www.instagram.com/foremostleads?igsh=MjY5NWp1ZXN3eWNv" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-colors text-gray-400">
               <InstagramIcon size={18} />
             </a>
             <a href="https://www.linkedin.com/company/foremost-leads/posts/?feedView=all" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-colors text-gray-400">
