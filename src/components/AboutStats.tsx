@@ -85,9 +85,9 @@ export default function AboutStats() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground leading-[1.3] mb-8"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-foreground leading-tight tracking-tight mb-8"
           >
-            We are a performance-driven marketing team that helps businesses scale using data-backed funnels, <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#175F30] to-[#22c55e]">high-intent ads, and conversion-focused strategies.</span>
+            We scale businesses using <span className="italic font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#175F30] to-[#22c55e] inline-block mt-2">data-backed funnels & ads.</span>
           </motion.h2>
           
           <motion.div 
