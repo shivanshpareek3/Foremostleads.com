@@ -6,7 +6,6 @@ const logos = [
   { name: "Meta", src: "https://cdn.simpleicons.org/meta/0467DF" },
   { name: "Google", src: "https://cdn.simpleicons.org/google/4285F4" },
   { name: "HubSpot", src: "https://cdn.simpleicons.org/hubspot/FF7A59" },
-  { name: "Salesforce", src: "https://cdn.simpleicons.org/salesforce/00A1E0" },
   { name: "WordPress", src: "https://cdn.simpleicons.org/wordpress/21759B" },
   { name: "Shopify", src: "https://cdn.simpleicons.org/shopify/95BF47" },
 ];
