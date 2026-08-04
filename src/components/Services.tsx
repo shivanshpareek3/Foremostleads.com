@@ -30,7 +30,7 @@ export default function Services() {
       title: "Content & Copywriting",
       description: "We provide you with all the content from ad scripts, VSL scripts and PPTs for presentations, aligned with your brand and goals.",
       features: ["Webinar scripts & decks", "Ad & funnel copy"],
-      image: "https://images.unsplash.com/photo-1455390582262-044cdead27d8?q=80&w=2273&auto=format&fit=crop", // Modern notebook / writing desk
+      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop", // Desk with computer and notebook
       reversed: true,
     },
   ];
