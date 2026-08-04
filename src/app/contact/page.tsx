@@ -101,7 +101,7 @@ export default function ContactPage() {
               <a href="#" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E1306C] text-white transition-all duration-300 hover:scale-110 shadow-lg backdrop-blur-md">
                 <InstagramIcon size={20} />
               </a>
-              <a href="#" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0077b5] text-white transition-all duration-300 hover:scale-110 shadow-lg backdrop-blur-md">
+              <a href="https://www.linkedin.com/company/foremost-leads/posts/?feedView=all" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0077b5] text-white transition-all duration-300 hover:scale-110 shadow-lg backdrop-blur-md">
                 <LinkedinIcon size={20} />
               </a>
             </div>
