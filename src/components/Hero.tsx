@@ -3,7 +3,9 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
-import HeroDashboard from "./HeroDashboard";
+import dynamic from "next/dynamic";
+
+const Hero3D = dynamic(() => import("./Hero3D"), { ssr: false });
 
 export default function Hero() {
   return (
@@ -107,7 +109,7 @@ export default function Hero() {
           className="relative w-full h-full min-h-[500px] flex items-center justify-center lg:justify-end"
         >
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-to-tr from-[#175F30]/10 to-[#22c55e]/10 blur-[100px] rounded-full" />
-          <HeroDashboard />
+          <Hero3D />
         </motion.div>
       </div>
     </section>
