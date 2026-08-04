@@ -8,25 +8,15 @@ import { ArrowRight } from "lucide-react";
 export default function AboutPage() {
   const team = [
     { 
-      name: "Rohit Sharma", 
-      role: "Founder & CEO", 
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop"
+      name: "Arpit Sharma", 
+      role: "Founder", 
+      image: "/Arpit sharma.png"
     },
     { 
-      name: "Aman Verma", 
-      role: "Performance Marketer", 
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop"
-    },
-    { 
-      name: "Neha Singh", 
-      role: "Growth Strategist", 
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
-    },
-    { 
-      name: "Priya Patil", 
-      role: "Automation Expert", 
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop"
-    },
+      name: "Yashvardhan Singh", 
+      role: "Co-Founder", 
+      image: "/yashvardhan singh.png"
+    }
   ];
 
   const coreValues = [
@@ -199,7 +189,7 @@ export default function AboutPage() {
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">The strategists, marketers, and automation engineers behind your growth engine.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8">
             {team.map((member, i) => (
               <motion.div 
                 key={i}
