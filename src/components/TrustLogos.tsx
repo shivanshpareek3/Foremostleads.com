@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 
 const logos = [
-  { name: "Meta", src: "/logos/meta.svg", width: 140 },
-  { name: "Google", src: "/logos/google.svg", width: 110 },
-  { name: "HubSpot", src: "/logos/hubspot.svg", width: 120 },
-  { name: "Salesforce", src: "/logos/salesforce.svg", width: 100 },
-  { name: "WordPress", src: "/logos/wordpress.svg", width: 160 },
-  { name: "Shopify", src: "/logos/shopify.svg", width: 120 },
+  { name: "Meta", src: "https://cdn.simpleicons.org/meta/0467DF" },
+  { name: "Google", src: "https://cdn.simpleicons.org/google/4285F4" },
+  { name: "HubSpot", src: "https://cdn.simpleicons.org/hubspot/FF7A59" },
+  { name: "Salesforce", src: "https://cdn.simpleicons.org/salesforce/00A1E0" },
+  { name: "WordPress", src: "https://cdn.simpleicons.org/wordpress/21759B" },
+  { name: "Shopify", src: "https://cdn.simpleicons.org/shopify/95BF47" },
 ];
 
 export default function TrustLogos() {
@@ -38,14 +38,14 @@ export default function TrustLogos() {
             {duplicatedLogos.map((logo, index) => (
               <div 
                 key={index} 
-                className="flex items-center justify-center cursor-default h-12 transition-all duration-500 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 hover:scale-105"
+                className="flex items-center gap-3 font-bold text-2xl transition-all duration-500 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 hover:scale-105 cursor-default"
               >
                 <img 
                   src={logo.src} 
                   alt={`${logo.name} logo`} 
-                  style={{ width: logo.width }}
-                  className="h-auto max-h-12 object-contain block"
+                  className="w-9 h-9 object-contain"
                 />
+                <span className="text-gray-800">{logo.name}</span>
               </div>
             ))}
           </motion.div>
