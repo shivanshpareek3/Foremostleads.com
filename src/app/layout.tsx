@@ -18,6 +18,9 @@ const sora = Sora({
 export const metadata: Metadata = {
   title: "Foremost Leads - Predictable Growth Engine",
   description: "Turn your business into a predictable growth engine that generates leads, sales, and revenue.",
+  icons: {
+    icon: "/foremost logo.webp",
+  },
 };
 
 export default function RootLayout({
