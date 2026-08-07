@@ -30,7 +30,7 @@ export default function Services() {
     },
     {
       title: "Content & Copywriting",
-      description: "We provide you with all the content from ad scripts, VSL scripts and PPTs for presentations, aligned with your brand and goals.",
+      description: "We provide you with all the content from ad scripts, VSL scripts and for presentations, aligned with your brand and goals.",
       features: ["Webinar scripts & decks", "Ad & funnel copy"],
       image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop", // Desk with computer and notebook
       reversed: true,
@@ -45,13 +45,13 @@ export default function Services() {
     },
     {
       title: "Video Editing",
-      description: "High-quality video editing for ads, marketing campaigns, webinars, and social media content designed to capture attention.",
+      description: "High-quality video editing for ads, marketing campaigns, webinars , and content designed to capture attention.",
       features: ["Ad Creatives videos", "Long form VSL Videos"]
     },
     {
       title: "Sales Closing Training",
-      description: "We create conversion-focused content and provide comprehensive pitch flow training aligned with your sales goals.",
-      features: ["Webinar pitch flow"]
+      description: "We provide comprehensive pitch flow and sales closing training aligned with your sales goals.",
+      features: ["Webinar pitch flow", "Closing tactics"]
     },
     {
       title: "Digital PR & Brand Reputation",
@@ -68,10 +68,10 @@ export default function Services() {
   return (
     <section className="w-full py-24 bg-white relative overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -80,7 +80,7 @@ export default function Services() {
             <span className="text-[#22c55e] text-lg">*</span>
             Our Services
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -94,12 +94,12 @@ export default function Services() {
         {/* Core Services Alternating Layout */}
         <div className="flex flex-col gap-24 mb-32">
           {coreServices.map((service, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`flex flex-col ${service.reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}
             >
               {/* Image Side */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: service.reversed ? 30 : -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -107,9 +107,9 @@ export default function Services() {
                 className="w-full lg:w-1/2"
               >
                 <div className="relative rounded-3xl overflow-hidden aspect-[4/3] group shadow-2xl">
-                  <img 
-                    src={service.image} 
-                    alt={service.title} 
+                  <img
+                    src={service.image}
+                    alt={service.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
@@ -117,7 +117,7 @@ export default function Services() {
               </motion.div>
 
               {/* Content Side */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: service.reversed ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -137,7 +137,7 @@ export default function Services() {
                   ))}
                 </ul>
                 <button onClick={() => router.push('/contact')} className="flex items-center gap-2 bg-[#175F30] hover:bg-[#175F30]/90 text-white px-8 py-4 rounded-xl font-bold transition-all hover:scale-105 active:scale-95 group w-fit">
-                  Work with us 
+                  Work with us
                   <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
                 </button>
               </motion.div>
@@ -146,7 +146,7 @@ export default function Services() {
         </div>
 
         {/* Other Services Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -167,7 +167,7 @@ export default function Services() {
                 if (index === 2) Icon = require("lucide-react").Headset;
 
                 return (
-                  <motion.div 
+                  <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -178,12 +178,12 @@ export default function Services() {
                     <div className="w-14 h-14 bg-[#eef7f1] group-hover:bg-[#22c55e] group-hover:text-white text-[#175F30] rounded-2xl flex items-center justify-center mb-8 transition-colors duration-500">
                       <Icon size={28} />
                     </div>
-                    
+
                     <h4 className="text-xl font-bold font-heading mb-4 text-gray-900 group-hover:text-[#175F30] transition-colors duration-300">{service.title}</h4>
                     <p className="text-gray-500 text-[15px] leading-relaxed mb-8 flex-grow">
                       {service.description}
                     </p>
-                    
+
                     <ul className="space-y-4 mt-auto">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center gap-3 text-sm font-semibold text-gray-700">
@@ -205,7 +205,7 @@ export default function Services() {
                 if (index === 1) Icon = require("lucide-react").UserCircle;
 
                 return (
-                  <motion.div 
+                  <motion.div
                     key={index + 3}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -216,12 +216,12 @@ export default function Services() {
                     <div className="w-14 h-14 bg-[#eef7f1] group-hover:bg-[#22c55e] group-hover:text-white text-[#175F30] rounded-2xl flex items-center justify-center mb-8 transition-colors duration-500">
                       <Icon size={28} />
                     </div>
-                    
+
                     <h4 className="text-xl font-bold font-heading mb-4 text-gray-900 group-hover:text-[#175F30] transition-colors duration-300">{service.title}</h4>
                     <p className="text-gray-500 text-[15px] leading-relaxed mb-8 flex-grow">
                       {service.description}
                     </p>
-                    
+
                     <ul className="space-y-4 mt-auto">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center gap-3 text-sm font-semibold text-gray-700">
