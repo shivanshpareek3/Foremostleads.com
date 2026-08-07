@@ -28,7 +28,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-80"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-30"
         style={{ willChange: "transform" }}
       >
         <source src="https://technoderivation.com/video/vd3.mp4" type="video/mp4" />

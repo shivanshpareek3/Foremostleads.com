@@ -48,20 +48,7 @@ export default function ServicesPage() {
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
       icon: Mic,
     },
-    {
-      title: "Digital PR",
-      description: "Build and protect your online image with strategic PR campaigns and proactive brand reputation management.",
-      features: ["Media placements", "Authority building"],
-      image: "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?q=80&w=2070&auto=format&fit=crop",
-      icon: Megaphone,
-    },
-    {
-      title: "Personal Branding",
-      description: "Establish yourself as an industry leader with targeted personal branding and powerful social presence strategies.",
-      features: ["Profile optimization", "Thought leadership"],
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop",
-      icon: UserCircle,
-    },
+
   ];
 
   return (

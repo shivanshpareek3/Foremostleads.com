@@ -48,16 +48,7 @@ export default function Services() {
       description: "We provide comprehensive pitch flow and sales closing training aligned with your sales goals.",
       features: ["Webinar pitch flow", "Closing tactics"]
     },
-    {
-      title: "Digital PR & Brand Reputation",
-      description: "Build and protect your online image with strategic PR campaigns and proactive reputation management.",
-      features: ["Media placements", "Authority building"]
-    },
-    {
-      title: "Personal Branding",
-      description: "Establish yourself as an industry leader with targeted personal branding and social presence strategies.",
-      features: ["Profile optimization", "Thought leadership"]
-    }
+
   ];
 
   return (
@@ -153,9 +144,8 @@ export default function Services() {
             </h3>
           </div>
           <div className="flex flex-col gap-8">
-            {/* First Row: 2 Cards Centered */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto w-full mb-8">
-              {otherServices.slice(0, 2).map((service, index) => {
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto w-full">
+              {otherServices.map((service, index) => {
                 let Icon = require("lucide-react").ArrowRight;
                 if (index === 0) Icon = require("lucide-react").Video;
                 if (index === 1) Icon = require("lucide-react").Headset;
@@ -191,43 +181,7 @@ export default function Services() {
               })}
             </div>
 
-            {/* Second Row: 2 Cards Centered */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto w-full">
-              {otherServices.slice(2, 4).map((service, index) => {
-                let Icon = require("lucide-react").ArrowRight;
-                if (index === 0) Icon = require("lucide-react").Megaphone;
-                if (index === 1) Icon = require("lucide-react").UserCircle;
 
-                return (
-                  <motion.div
-                    key={index + 2}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ delay: (index + 2) * 0.1 }}
-                    className="group relative bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-[0_30px_60px_-15px_rgba(34,197,94,0.3)] hover:border-[#22c55e]/30 hover:-translate-y-2 transition-all duration-500 flex flex-col"
-                  >
-                    <div className="w-14 h-14 bg-[#eef7f1] group-hover:bg-[#22c55e] group-hover:text-white text-[#175F30] rounded-2xl flex items-center justify-center mb-8 transition-colors duration-500">
-                      <Icon size={28} />
-                    </div>
-
-                    <h4 className="text-xl font-bold font-heading mb-4 text-gray-900 group-hover:text-[#175F30] transition-colors duration-300">{service.title}</h4>
-                    <p className="text-gray-500 text-[15px] leading-relaxed mb-8 flex-grow">
-                      {service.description}
-                    </p>
-
-                    <ul className="space-y-4 mt-auto">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-3 text-sm font-semibold text-gray-700">
-                          <CheckCircle2 className="text-[#22c55e] shrink-0" size={18} />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                );
-              })}
-            </div>
           </div>
         </motion.div>
 

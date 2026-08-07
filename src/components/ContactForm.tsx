@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { submitContactForm } from "@/actions/contact";
+
 import { CheckCircle2, Loader2, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -35,19 +35,23 @@ export default function ContactForm() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     setError("");
-    try {
-      const res = await submitContactForm(data);
-      if (res.success) {
-        setSuccess(true);
-        reset();
-      } else {
-        setError(res.error || "Something went wrong.");
-      }
-    } catch (err) {
-      setError("Failed to send message. Please try again later.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    
+    const messageText = `New Strategy Call Request:
+
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Business Type: ${data.businessType}
+Message: ${data.message}`;
+
+    const encodedText = encodeURIComponent(messageText);
+    const whatsappUrl = `https://wa.me/916350291420?text=${encodedText}`;
+    
+    window.open(whatsappUrl, '_blank');
+    
+    setSuccess(true);
+    reset();
+    setIsSubmitting(false);
   };
 
   return (
