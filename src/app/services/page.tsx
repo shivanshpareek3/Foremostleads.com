@@ -29,21 +29,14 @@ export default function ServicesPage() {
     },
     {
       title: "Content & Copywriting",
-      description: "We provide you with all the content from ad scripts, VSL scripts and PPTs for presentations, perfectly aligned with your brand.",
+      description: "We provide you with all the content from ad scripts and VSL scripts, perfectly aligned with your brand.",
       features: ["Webinar scripts & decks", "Ad & funnel copy"],
       image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop",
       icon: PenTool,
     },
     {
-      title: "Website & LMS",
-      description: "Create high-quality websites, landing pages, and LMS platforms built for performance, speed, and conversions.",
-      features: ["Funnel-ready pages", "Speed optimized"],
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop",
-      icon: LayoutTemplate,
-    },
-    {
       title: "Video Editing",
-      description: "High-quality video editing for ads, marketing campaigns, webinars, and social media content designed to capture attention.",
+      description: "High-quality video editing for ads, marketing campaigns, webinars, and content designed to capture attention.",
       features: ["Ad Creatives", "Long form VSL Videos"],
       image: "https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=2000&auto=format&fit=crop",
       icon: Video,
