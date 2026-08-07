@@ -50,7 +50,7 @@ export default function ServicesPage() {
     },
     {
       title: "Sales Training",
-      description: "We create conversion-focused content and provide comprehensive pitch flow training aligned with your sales goals.",
+      description: "We provide comprehensive pitch flow and sales closing training aligned with your sales goals.",
       features: ["Webinar pitch flow", "Closing tactics"],
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
       icon: Mic,

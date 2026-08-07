@@ -30,7 +30,7 @@ export default function Services() {
     },
     {
       title: "Content & Copywriting",
-      description: "We provide you with all the content from ad scripts, VSL scripts and for presentations, aligned with your brand and goals.",
+      description: "We provide you with all the content from ad scripts and VSL scripts, aligned with your brand and goals.",
       features: ["Webinar scripts & decks", "Ad & funnel copy"],
       image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop", // Desk with computer and notebook
       reversed: true,
@@ -38,11 +38,6 @@ export default function Services() {
   ];
 
   const otherServices = [
-    {
-      title: "Website & LMS Development",
-      description: "Create high-quality websites, landing pages, and LMS platforms built for performance, speed, and conversions.",
-      features: ["Funnel-ready pages", "Mobile & speed optimized"]
-    },
     {
       title: "Video Editing",
       description: "High-quality video editing for ads, marketing campaigns, webinars , and content designed to capture attention.",
@@ -158,13 +153,12 @@ export default function Services() {
             </h3>
           </div>
           <div className="flex flex-col gap-8">
-            {/* First Row: 3 Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {otherServices.slice(0, 3).map((service, index) => {
+            {/* First Row: 2 Cards Centered */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto w-full mb-8">
+              {otherServices.slice(0, 2).map((service, index) => {
                 let Icon = require("lucide-react").ArrowRight;
-                if (index === 0) Icon = require("lucide-react").Monitor;
-                if (index === 1) Icon = require("lucide-react").Video;
-                if (index === 2) Icon = require("lucide-react").Headset;
+                if (index === 0) Icon = require("lucide-react").Video;
+                if (index === 1) Icon = require("lucide-react").Headset;
 
                 return (
                   <motion.div
@@ -199,18 +193,18 @@ export default function Services() {
 
             {/* Second Row: 2 Cards Centered */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto w-full">
-              {otherServices.slice(3, 5).map((service, index) => {
+              {otherServices.slice(2, 4).map((service, index) => {
                 let Icon = require("lucide-react").ArrowRight;
                 if (index === 0) Icon = require("lucide-react").Megaphone;
                 if (index === 1) Icon = require("lucide-react").UserCircle;
 
                 return (
                   <motion.div
-                    key={index + 3}
+                    key={index + 2}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ delay: (index + 3) * 0.1 }}
+                    transition={{ delay: (index + 2) * 0.1 }}
                     className="group relative bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-[0_30px_60px_-15px_rgba(34,197,94,0.3)] hover:border-[#22c55e]/30 hover:-translate-y-2 transition-all duration-500 flex flex-col"
                   >
                     <div className="w-14 h-14 bg-[#eef7f1] group-hover:bg-[#22c55e] group-hover:text-white text-[#175F30] rounded-2xl flex items-center justify-center mb-8 transition-colors duration-500">
