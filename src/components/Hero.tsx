@@ -50,7 +50,7 @@ export default function Hero() {
           Performance Marketing That Delivers
         </motion.div>
         
-        <h1 className="w-full mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold leading-[1.15] tracking-tight text-white font-heading">
+        <h1 className="w-full mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold leading-[1.15] tracking-tight text-white font-outfit">
           <FadeUpText text="Predictable Growth." delay={0.2} />
           <br />
           <span className="inline-block mt-2">
@@ -67,7 +67,7 @@ export default function Hero() {
           </span>
         </h1>
         
-        <p className="w-full max-w-[600px] mb-12 text-base sm:text-lg leading-relaxed text-gray-300 font-sans mx-auto">
+        <p className="w-full max-w-[600px] mb-12 text-base sm:text-lg leading-relaxed text-gray-300 font-outfit font-light mx-auto">
           <FadeUpText text="We help businesses generate high-quality leads, increase sales and scale profitably with data-driven marketing, funnels and automation." delay={0.8} />
         </p>
 
