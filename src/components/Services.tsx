@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Services() {
+  const router = useRouter();
   const coreServices = [
     {
       title: "Lead Generation",
@@ -135,10 +136,10 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/contact" className="flex items-center gap-2 bg-[#175F30] hover:bg-[#175F30]/90 text-white px-8 py-4 rounded-xl font-bold transition-all hover:scale-105 active:scale-95 group w-fit">
+                <button onClick={() => router.push('/contact')} className="flex items-center gap-2 bg-[#175F30] hover:bg-[#175F30]/90 text-white px-8 py-4 rounded-xl font-bold transition-all hover:scale-105 active:scale-95 group w-fit">
                   Work with us 
                   <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-                </Link>
+                </button>
               </motion.div>
             </div>
           ))}
